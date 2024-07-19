@@ -1,23 +1,13 @@
-import logo from './logo.svg';
-import './App.css';
-
+import React from 'react'; // Make sure to import React
+import NavBar from './components/Navbar'; // Ensure correct spelling and case sensitivity
+import ProductGrid from './components/ProductGrid'; // Ensure correct spelling and case sensitivity
+import Carousel from './components/Carousel';
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <NavBar /> 
+      <ProductGrid />
+      <Carousel />
     </div>
   );
 }
