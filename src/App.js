@@ -3,13 +3,18 @@ import NavBar from './components/Navbar'; // Ensure correct spelling and case se
 import ProductGrid from './components/ProductGrid'; // Ensure correct spelling and case sensitivity
 import Carousel from './components/Carousel';
 import { RecommendationProvider } from './components/RecommendationContext';
+import { AuthProvider } from './components/AuthContext';
+
+
 function App() {
   return (
-    <RecommendationProvider>
-      <NavBar /> 
-      <ProductGrid />
-      <Carousel />
-    </RecommendationProvider>
+    <AuthProvider>
+      <RecommendationProvider>
+        <NavBar /> 
+        <ProductGrid />
+        <Carousel />
+      </RecommendationProvider>
+    </AuthProvider>
   );
 }
 
