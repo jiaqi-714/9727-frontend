@@ -574,10 +574,6 @@ video {
   margin-right: auto;
 }
 
-.ml-1 {
-  margin-left: 0.25rem;
-}
-
 .mr-2 {
   margin-right: 0.5rem;
 }
@@ -599,10 +595,6 @@ video {
 
 .block {
   display: block;
-}
-
-.inline {
-  display: inline;
 }
 
 .flex {
@@ -737,6 +729,11 @@ video {
 .bg-blue-600 {
   --tw-bg-opacity: 1;
   background-color: rgb(37 99 235 / var(--tw-bg-opacity));
+}
+
+.bg-red-500 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(239 68 68 / var(--tw-bg-opacity));
 }
 
 .bg-white {
