@@ -1,9 +1,20 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useState, useEffect } from 'react';
 import { RecommendationContext } from '../components/RecommendationContext';
 
 const ProductGrid = () => {
   const { recommendations } = useContext(RecommendationContext);
   const [likedItems, setLikedItems] = useState({});
+
+  // Update the likedItems state after recommendations have been fetched
+  useEffect(() => {
+    if (recommendations.length > 0) {
+      const initialLikes = recommendations.reduce((acc, item) => {
+        acc[item.article_id] = item.liked;  // Use the 'liked' property from each item
+        return acc;
+      }, {});
+      setLikedItems(initialLikes);
+    }
+  }, [recommendations]);  // Depend on recommendations
 
   const toggleLike = (event, itemId) => {
     event.preventDefault(); // Prevent default anchor click behavior
