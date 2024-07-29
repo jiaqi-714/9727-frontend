@@ -29,10 +29,13 @@ const Carousel = () => {
     return <div>Loading...</div>;
   }
 
+  // Slice the recommendations to start from the 4th item
+  const displayedRecommendations = recommendations.slice(3);
+
   return (
     <div className="w-full overflow-x-auto pb-6 pt-1">
       <ul className="flex gap-4">
-        {recommendations.map((product, index) => (
+        {displayedRecommendations.map((product, index) => (
           <li key={index} className="relative aspect-square h-[30vh] max-h-[275px] w-2/3 max-w-[475px] flex-none md:w-1/3">
             <div className="group flex h-full w-full items-center justify-center overflow-hidden rounded-lg border bg-white hover:border-blue-600 dark:bg-black relative border-neutral-200 dark:border-neutral-800">
               <img
